@@ -1,0 +1,32 @@
+//logic is correct but there is some error in the code
+
+package graphs;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class adjacencyListmethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n, m, u, v, i, j;
+		n = sc.nextInt();
+		m = sc.nextInt();
+		ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
+		for (i = 0; i <= n; i++) {
+			u = sc.nextInt();
+			v = sc.nextInt();
+			adj.get(u).add(v);
+			adj.get(v).add(u);
+		}
+
+		for (i = 1; i < n; i++) {
+			for (j = 0; j < adj.get(i).size(); j++) {
+				System.out.print(adj.get(i).get(j));
+			}
+			System.out.println();
+		}
+	}
+
+}
